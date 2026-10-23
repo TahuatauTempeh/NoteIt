@@ -1,6 +1,7 @@
 package model;
 
 import java.time.LocalDateTime;
+import java.util.UUID;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -20,7 +21,7 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     @Column(nullable = false, updatable = false)
-    private Long id;
+    private UUID id;
 
 //    username
     @Column(nullable = false, unique = true, length = 50)
@@ -58,7 +59,7 @@ public class User {
         this.created_at = LocalDateTime.now();
     }
 
-    public Long getId() {
+    public UUID getId() {
         return id;
     }
 
