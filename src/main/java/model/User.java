@@ -1,4 +1,6 @@
-package com.example.NoteIt.model;
+package model;
+
+import java.time.LocalDateTime;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -7,9 +9,6 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.PrePersist;
 import jakarta.persistence.Table;
-
-import java.time.LocalDateTime;
-import java,util.UUID;
 
 //so that the thing detects it as a table in the database
 @Entity
@@ -55,7 +54,7 @@ public class User {
 
 //    automatically assign this to the current time that is used
     @PrePersist
-    public onCreate() {
+    protected void onCreate() {
         this.created_at = LocalDateTime.now();
     }
 
@@ -75,7 +74,7 @@ public class User {
         return password_hash;
     }
 
-    public LocalTime getCreated_at() {
+    public LocalDateTime getCreated_at() {
         return created_at;
     }
 
