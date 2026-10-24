@@ -63,6 +63,8 @@ Browser -> Controller -> Service -> Repository -> Database
 
 Controllers handle HTTP only, services hold the business rules, and repositories talk to the database. Entities are never sent to the browser directly, DTOs are used instead.
 
+ ***This Database Design Diagram Needs to be Updated Later Since the Data Type are Wrong***
+
 ## Database design
 
 ```mermaid
@@ -202,7 +204,7 @@ Hibernate creates the tables in Supabase on the first run with entities present.
 ## Roadmap
 
 - [x] Generate the project and connect it to Supabase
-- [ ] Entities and repositories (`User`, `Category`, `Note`, `ChecklistItem`, `NoteImage`)
+- [x] Entities and repositories (`User`, `Category`, `Note`, `ChecklistItem`, `NoteImage`)
 - [ ] Registration and login with Spring Security
 - [ ] Categories: create, list, delete
 - [ ] Notes with deadlines and automatic overdue status
