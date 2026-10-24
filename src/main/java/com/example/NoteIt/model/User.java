@@ -1,4 +1,4 @@
-package model;
+package com.example.NoteIt.model;
 
 import java.time.LocalDateTime;
 import java.util.UUID;

@@ -1,10 +1,9 @@
-package model;
+package com.example.NoteIt.model;
 
 import java.util.UUID;
 
-import jakarta.persistence.Entity;
 import jakarta.persistence.Column;
-import jakarta.persistence.ForeignKey;
+import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -13,22 +12,21 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity 
-@Table(name = "category")
-
+@Table(name = "categories")
 public class Category {
     // attributes
 
-    // user id
+    // category id
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
 
-    // user id foreign key
-    @ManyToOne
-    @JoinColumn(name = "user_id", nullable = false) 
+    // user id
+    @ManyToOne 
+    @JoinColumn(name = "user_id", nullable = false)
     private User user;
 
-    // name of the category
+    // category name
     @Column(nullable = false, length = 255)
     private String name;
 
@@ -42,7 +40,7 @@ public class Category {
     public Category() {
     }
 
-    // constructors
+    // constructor with parameters
     public Category(String name, String colour) {
         this.name = name;
         this.colour = colour;
@@ -70,6 +68,5 @@ public class Category {
 
     public void setColour(String colour) {
         this.colour = colour;
-    }
-
+    }   
 }
