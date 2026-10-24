@@ -22,6 +22,7 @@ public class Note {
     // Note id
     @Id 
     @GeneratedValue(strategy = GenerationType.UUID)
+    @Column(nullable = false, updatable = false)
     private UUID id;
 
     // user id

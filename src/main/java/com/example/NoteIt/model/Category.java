@@ -23,7 +23,7 @@ public class Category {
 
     // user id
     @ManyToOne 
-    @JoinColumn(name = "user_id", nullable = false)
+    @JoinColumn(name = "user_id", nullable = false, updatable = false)
     private User user;
 
     // category name
