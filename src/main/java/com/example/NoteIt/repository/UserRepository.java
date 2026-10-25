@@ -22,6 +22,9 @@ public interface UserRepository extends JpaRepository<User, UUID> {
     // check if that user exists based on their username
     boolean existsByUsername(String username);
 
+    // check if the user exists based on their username by ignoring upper case and usch
+    boolean existsByUsernameIgnoreCase(String username);
+
     // check if that user exists based on their email
     boolean existsByEmail(String email);
 }
